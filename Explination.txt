@@ -1,0 +1,149 @@
+Explanation:
+Header Files:
+
+#include <iostream>
+#include <windows.h>
+#include <ctime>
+These lines include necessary header files for input/output (iostream), Windows-specific functions 
+(windows.h for Sleep and Beep), and time-related functions (ctime for getting the current time).
+
+Function Prototypes:
+
+void login();
+void deposit_milk();
+void menu();
+void meal();
+void loan();
+void about();
+These lines declare the prototypes of functions that will be defined later in the code. 
+These functions handle different aspects of a milk dairy management system.
+
+Class info:
+
+class info
+{
+public:
+    char name[50];
+    int no, fat;
+    float milk;
+    char day[10];
+
+public:
+    void getdata();
+    void putdata();
+};
+This class info is used to store information about a milk deposit, including the customer’s name, 
+customer number, milk fat percentage, milk quantity, and whether it’s morning or evening milk. 
+It also contains member functions getdata and putdata for inputting and displaying this information.
+
+info Member Function Definitions:
+void info::getdata() { ... }
+void info::putdata() { ... }
+These functions are the implementations of the getdata and putdata member functions of the info class. 
+They allow you to input and display customer milk deposit information.
+
+Global Variables:
+char user[50];
+int pass;
+int i, opt;
+These are global variables used throughout the program to store the user’s name, password, an 
+integer i, and an option opt for menu choices.
+
+main() Function:
+int main()
+{
+    login();
+    menu();
+}
+The main function is the entry point of the program. It calls the login function to authenticate 
+the user and then proceeds to the menu function, which displays the main menu.
+
+
+login() Function:
+void login() { ... }
+This function handles user authentication by asking for a username and password.
+ If the correct password (3003) is entered, it clears the screen, displays a success message, 
+ and makes a beeping sound. Otherwise, it shows an error message and recalls main().
+
+
+deposit_milk() Function:
+void deposit_milk() { ... }
+This function allows users to deposit milk by choosing whether it’s from a buffalo or cow and 
+entering relevant information about the milk deposit. It then displays a bill and asks if the user 
+wants to go back to the main menu or continue depositing milk.
+
+
+menu() Function:
+void menu() { ... }
+The menu function displays the main menu of options for the user, such as depositing milk, ordering animal meal, 
+applying for a loan, viewing information about the dairy, and logging out. It uses a switch statement to handle 
+different menu choices.
+
+
+meal() Function:
+void meal() { ... }
+This function handles ordering animal meal products. It presents a menu of meal options, calculates the 
+total cost based on the quantity selected, and displays a bill. It also allows the user to return to the
+main menu or order more meals.
+
+loan() Function:
+void loan() { ... }
+The loan function handles loan applications. It offers different types of loans (home loan, car loan, 
+agriculture loan) with different interest rates. It calculates the total loan amount, interest, and monthly EMI. 
+Users can choose a loan type, input loan details, and view their loan receipt.
+
+
+about() Function:
+void about() { ... }
+The about function displays information about the SUNITA milk dairy. It provides a brief description of 
+the dairy and allows users to return to the main menu by pressing ‘M’.
+
+Code Functions:
+1. `void login()`:
+– This function handles the user authentication process. 
+– It prompts the user for a username and password.
+– If the password is correct (3003), it displays a success message with a loading animation and a beep sound.
+– If the password is incorrect, it displays an error message and recursively calls itself for the user to retry.
+
+2. `void deposite_milk()`:
+– This function allows users to input details about milk deposits.
+– Users select the type of animal (buffalo or cow) for which milk is being deposited.
+– It creates an instance of the `info` class, gathers input data like name, animal type, milk quantity, 
+and fat content.
+– It then displays a bill using the `putdata` function of the `info` class and offers an option to 
+return to the main menu.
+
+3. `void menu()`:
+– This function displays the main menu of the dairy management system.
+– It shows options like managing milk deposits, animal meal, loan applications, dairy information, and logout.
+– Users input a choice, and based on the choice, the corresponding function is called 
+(e.g., `deposite_milk`, `meal`, `loan`, `about`), or the program exits if the user chooses to logout.
+
+4. `void meal()`:
+– This function allows users to purchase animal meal products.
+– It displays available meal options along with their prices.
+– Users choose a product and specify the quantity they want to purchase.
+– The function calculates the total cost, displays a bill receipt, and offers an option to return to the main menu.
+
+5. `void loan()`:
+– This function provides loan options and calculates loan details.
+– It presents loan options like home loan, car loan, and agriculture loan, along with their interest rates.
+– Users choose a loan option and input the loan amount and tenure.
+– The function calculates interest, total due amount, and monthly EMI. It then displays a loan receipt 
+and offers an option to return to the main menu.
+
+6. `void about()`:
+– This function displays information about the dairy establishment, benefits, and loan options.
+– It provides details about the dairy’s services, benefits for associates, and available loan options.
+– Users can choose to return to the main menu or continue reading.
+
+7. `int main()`:
+– The main function initializes the program execution.
+– It starts by calling the `login` function to authenticate the user.
+– If the login is successful, it proceeds to the `menu` function to display the main menu and handle 
+user interactions.
+
+These functions collectively create an interactive dairy management system where users can log in, manage 
+milk deposits, purchase animal meal, apply for loans, and access information about the dairy. 
+The program showcases basic control flow, user input, function calls, and class usage to simulate dairy 
+management operations.
